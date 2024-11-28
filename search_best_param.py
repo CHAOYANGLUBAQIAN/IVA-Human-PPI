@@ -33,37 +33,79 @@ kf = KFold(n_splits=5, shuffle=True, random_state=42)
 
 
 
+
+
 #adaboost model
 base_classifier = DecisionTreeClassifier()
 model = AdaBoostClassifier(base_classifier)
 param_grid = {
     'n_estimators': list(np.arange(50,500,10)),
     'learning_rate':list(np.arange(0.01,0.2,0.01))
+    'algorithm':['SAMME', 'SAMME.R']
+
 }
+
+
+
+
+
+#ExtraTrees model
+#model = ExtraTreesClassifier()
+#param_grid = {
+#    'n_estimators': list(np.arange(50,500,10)),
+#    'criterion':['gini', 'entropy']
+#    'max_depth':[None, 2, 4, 6, 8, 10]
+#    'min_samples_split':list(np.arange(2, 10, 1))
+#    'min_samples_leaf':list(np.arange(1, 10, 1))
+#    'max_features':['sqrt', 'log2']
+#}
+
+
+
+#Random Forest model
+#model = RandomForestClassifier()
+#param_grid = {
+#    'n_estimators': list(np.arange(50,500,10)),
+#    'max_depth':[None, 2, 4, 6, 8, 10]
+#    'min_samples_split':list(np.arange(2, 10, 1))
+#    'min_samples_leaf':list(np.arange(1, 10, 1))
+#    'max_features':['sqrt', 'log2']
+#    'criterion':['gini', 'entropy']
+#}
+
 
 
 #svm model
 #model = svm.SVC(kernel='rbf')
 #param_grid = {
-#    'n_estimators': list(np.arange(50,500,10)),
-#    'learning_rate':list(np.arange(0.01,0.2,0.01))
+#    'C': [0.1, 1, 10, 100, 200]
+#    'gamma':[0.01, 0.1, 1, 5, 10, 50, 100]
+#    'kernel':['linear', 'rbf', 'poly']
 #}
 
 
 
-#KNN model
-model = KNeighborsClassifier()
+#XGBoost model
+model =  XGBClassifier()
 #param_grid = {
 #    'n_estimators': list(np.arange(50,500,10)),
 #    'learning_rate':list(np.arange(0.01,0.2,0.01))
+#    'max_depth':list(np.arange(3, 10, 1))
+#    'min_child_weidht':list(np.arange(1, 10, 1))
+#    'gamma':list(np.arange(0.0, 0.3, 0.1))
+#    'reg_alpha':list(np.arange(0.0, 1, 0.1))
+#    'reg_lambda':list(np.arange(0.0, 1, 0.1))
 #}
+
+
+
 
 
 #LogisticRegression model
 model = LogisticRegression()
 #param_grid = {
-#    'n_estimators': list(np.arange(50,500,10)),
-#    'learning_rate':list(np.arange(0.01,0.2,0.01))
+#    'C': [0.1, 1, 10, 100, 200]
+#    'penalty':['l1', 'l2']
 #}
 
 # 使用网格搜索选择最佳参数

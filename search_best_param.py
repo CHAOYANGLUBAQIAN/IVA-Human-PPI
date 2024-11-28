@@ -18,7 +18,7 @@ from sklearn.naive_bayes import MultinomialNB
 
 warnings.filterwarnings("ignore")
 # 加载数据集
-input_file1 = 'data/features/合/基于度的差异负采样/CT.csv'
+input_file1 = 'data/features/CT.csv'
 df = pd.read_csv(input_file1, header=0, encoding='utf-8')
 
 # 提取特征和标签

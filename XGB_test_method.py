@@ -12,7 +12,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import confusion_matrix
 import warnings
 warnings.filterwarnings("ignore")
-input_file1 = 'data/testdata_out/合/CT+Moran.csv'
+input_file1 = 'data/testdata_out/CT+Moran.csv'
 df = pd.read_csv(input_file1, header=0, encoding='utf-8')
 df = df.sample(frac=1, random_state=42).reset_index(drop=True) #打乱顺序，固定随机因子
 

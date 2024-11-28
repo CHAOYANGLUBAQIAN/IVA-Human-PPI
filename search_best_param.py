@@ -10,6 +10,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn import svm
 import numpy as np
 import warnings
+from xgboost import XGBClassifier
+from sklearn.ensemble import RandomForestClassifier,ExtraTreesClassifier,AdaBoostClassifier
+import lightgbm as lgb
+from sklearn.naive_bayes import MultinomialNB
+
+
 warnings.filterwarnings("ignore")
 # 加载数据集
 input_file1 = 'data/features/合/基于度的差异负采样/CT.csv'

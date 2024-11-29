@@ -48,7 +48,8 @@ python  compare_models.py
 ```
 
 ###  4.The trained model is prepared for prediction  
-- predict data path:data/predict/test.csv  
+- predict data path:data/predict/test.csv
+- We offer a more user-friendly online website: http://frpxg5.dpfrp.top:2365/ The predicted results can be accessed and downloaded on this website.
 ```
 python  predict.py
 
